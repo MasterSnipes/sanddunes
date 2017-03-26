@@ -50,7 +50,25 @@
     </div>	 
     </div>    
     </div>
-    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript">
+    	var keyamt;
+    	var moneyamt;
+    	var finalamt;
+    	function calculation() {
+    		keyamt = document.getElementById('keys');
+    		moneyamt = document.getElementById('money');
+    		if(keyamt.value != 0 && moneyamt.value != 0){
+    			console.log('Error!');
+    			document.getElementById('finalamt').innerHTML = "Error, input only one value!";
+    		} else if(keyamt.value != 0) {
+    			finalamt = Math.round((keyamt.value*2.5)/0.03);
+    			document.getElementById('finalamt').innerHTML = finalamt + " Sand Dunes";
+    		} else if(moneyamt.value != 0){
+    			finalamt = Math.round(moneyamt.value/0.03);
+    			document.getElementById('finalamt').innerHTML = finalamt + " Sand Dunes";
+    		}
+    	}	
+    </script>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
       <script type="text/javascript" src="js/materialize.min.js"></script>
